@@ -1,0 +1,104 @@
+.about-us {
+	&__content {
+		padding: 20px 0;
+
+		@include onTablet {
+			padding: 40px 0;
+		}
+	}
+
+	&__title {
+		font-size: $title;
+		color: $color-primary;
+		font-weight: $bold-font;
+
+		@include onTablet {
+			font-size: $title-tablet;
+		}
+
+		@include onDesktop {
+			font-size: $title-desktop;
+		}
+	}
+
+	&__body {
+		display: flex;
+		gap: 40px;
+	}
+
+	&__paragraph-list {
+		margin-top: 20px;
+	  width: 30%;
+		display: flex;
+		gap: 40px;
+		flex-wrap: wrap;
+
+		@include onTablet {
+			gap: 80px;
+			margin-top: 40px;
+			width: 50%;
+		}
+	}
+
+	&__paragraph {
+		display: flex;
+		flex-direction: column;
+		gap: 10px
+	}
+
+	&__paragraph-title {
+		font-size: $large-font-size;
+		color: $color-white;
+		font-weight: $bold-font;
+
+		@include onTablet {
+			font-size: $extra-large-font-size;
+		}
+	}
+
+	&__paragraph-info {
+		display: inline-block;
+		font-size: $base-font-size;
+		color: $color-white;
+		font-weight: $regular-font;
+		width: 100%;
+
+		@include onTablet {
+			font-size: $medium-font-size;
+			width: 300px
+		}
+	}
+
+	&__gallery {
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 70%;
+
+		@include onTablet {
+			margin-top: 40px;
+			width: 50%;
+		}
+	}
+
+	&__gallery-item {
+		width: 50%;
+		display: flex;
+		height: 220px;
+
+		@include onTablet {
+			height: 320px;
+		}
+	}
+
+	&__gallery-image {
+		// height: 220px;
+		width: 100%;
+		object-fit: cover;
+
+		@include onTablet {
+			// height: 320px;
+		}
+	}
+}

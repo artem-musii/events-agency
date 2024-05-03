@@ -2,16 +2,69 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { languageConfig } from './lang/language.config.js';
+
+const SPEED = 2500;
+
+window.onload = function() {
+	document.querySelector('.loader').style.display = 'none';
+	document.body.classList.remove('no-scroll');
+};
+
 AOS.init({
-  offset: 180,
+  offset: 40,
   delay: 0,
   duration: 300,
   easing: 'ease',
   once: false,
   mirror: true,
   anchorPlacement: 'top-bottom',
-
 });
+
+function isElementVisible(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
+function startAnimation(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const targetElement = entry.target;
+      const targetNum = parseInt(targetElement.dataset.number, 10);
+      changeNumberContent(targetElement, targetNum, 0);
+      observer.unobserve(targetElement);
+    }
+  });
+}
+
+const observer = new IntersectionObserver(startAnimation, {
+  root: null,
+  threshold: 0.5
+});
+
+const numberElements = document.querySelectorAll('.number-animate');
+
+numberElements.forEach(numberElement => {
+  if (isElementVisible(numberElement)) {
+    const targetNum = parseInt(numberElement.dataset.number, 10);
+    changeNumberContent(numberElement, targetNum, 0);
+  } else {
+    observer.observe(numberElement);
+  }
+});
+
+function changeNumberContent(numberElement, to, from = 0) {
+  for (let i = from; i <= to; i++) {
+		setTimeout(() => {
+			numberElement.textContent = i;
+		}, SPEED / to * i);
+	}
+}
 
 const navigation = document.querySelector('.navigation');
 
