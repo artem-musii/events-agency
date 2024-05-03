@@ -15,17 +15,17 @@ export const addNavigationInteractionsListeners = (
   for (const link of links) {
     link.addEventListener('click', () => {
       menu.classList.toggle('menu--active')
-      toggleScroll(config)
+      toggleScroll.call(config)
     })
   }
 
   burgerMenu.addEventListener('click', () => {
     menu.classList.toggle('menu--active')
-    toggleScroll(config)
+    toggleScroll.call(config)
   })
 
   menuCloser.addEventListener('click', () => {
     menu.classList.toggle('menu--active')
-    toggleScroll(config)
+    toggleScroll.call(config)
   })
 }
