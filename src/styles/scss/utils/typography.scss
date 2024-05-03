@@ -1,0 +1,19 @@
+$bold-font: 700;
+$medium-font: 500;
+$regular-font: 400;
+$light-font: 300;
+
+$base-font-size: 16px;
+$medium-font-size: 22px;
+$large-font-size: 28px;
+
+$title-small: 24px;
+$title-tablet-small: $title-small * 1.25;
+$title-desktop-small: $title-small * 1.5;
+$header-extra-large: 48px;
+$header-tablet-extra-large: $header-extra-large * 1.25;
+$header-desktop-extra-large: $header-extra-large * 1.5;
+
+body {
+	font-family: Roboto, sans-serif;
+}
