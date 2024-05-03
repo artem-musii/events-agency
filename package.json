@@ -8,13 +8,24 @@
   "type": "module",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --dist-dir public"
+    "build": "parcel build --dist-dir public",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:eslint": "eslint --fix .",
+    "lint:prettier": "prettier --write ."
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.0.2",
     "aos": "^2.3.4",
-    "parcel": "^2.12.0"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-unicorn": "^52.0.0",
+    "parcel": "^2.12.0",
+    "prettier": "^3.2.5"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.12.0"
+    "@eslint/js": "^9.2.0",
+    "@parcel/transformer-sass": "2.12.0",
+    "eslint": "^9.2.0",
+    "globals": "^15.1.0"
   }
 }

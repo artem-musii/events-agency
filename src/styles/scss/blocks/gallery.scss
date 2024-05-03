@@ -1,64 +1,62 @@
 .gallery {
-	&__content {
-		padding: 20px 0;
+  &__content {
+    padding: 20px 0;
 
-		@include onTablet {
-			padding: 40px 0;
-		}
-	}
+    @include onTablet {
+      padding: 40px 0;
+    }
+  }
 
-	&__title {
-		color: $color-primary;
-		font-size: $title;
-		text-transform: uppercase;
-		font-weight: $bold-font;
-		text-align: center;
+  &__title {
+    color: $color-primary;
+    font-size: $title;
+    text-transform: uppercase;
+    font-weight: $bold-font;
+    text-align: center;
 
-		@include onTablet {
-			font-size: $title-tablet;
-			text-align: left;
-		}
+    @include onTablet {
+      font-size: $title-tablet;
+      text-align: left;
+    }
 
-		@include onDesktop {
-			font-size: $title-desktop;
-		}
-	}
+    @include onDesktop {
+      font-size: $title-desktop;
+    }
+  }
 
-	&__list {
-		margin-top: 20px;
-		display: grid;
-		gap: 20px;
-		justify-content: center;
-		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  &__list {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 
-		@include onTablet {
-			margin-top: 40px;
-		}
-	}
+    @include onTablet {
+      margin-top: 40px;
+    }
+  }
 
-	&__item {
-		width: 80%;
-		margin: 0 auto;
+  &__item {
+    width: 80%;
+    margin: 0 auto;
 
-		@include onTablet {
-			width: 100%;
-		}
-	}
+    @include onTablet {
+      width: 100%;
+    }
+  }
 
-	&__image {
-		transition: transform $smooth-transition;
+  &__image {
+    transition: transform $smooth-transition;
 
-	
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 
-		&:hover {
-			transform: scale(1.05);
-		}
-	}
+  &__image-item {
+    height: 300px;
 
-	&__image-item {
-		height: 300px;
-
-		width: 100%;
-		object-fit: cover;
-	}
+    width: 100%;
+    object-fit: cover;
+  }
 }

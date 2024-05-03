@@ -1,161 +1,161 @@
 .navigation {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: $color-black;
-	font-weight: 700;
-	text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-black;
+  font-weight: 700;
+  text-transform: uppercase;
 
-	&--scrolled {
-		background-color: rgba(0, 0, 0, 0.8);
-	}
+  &--scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 
-	&__language {
-		cursor: pointer;
-		position: relative;
+  &__language {
+    cursor: pointer;
+    position: relative;
 
-		& path {
-			transition: stroke $smooth-transition;
-		}
+    & path {
+      transition: stroke $smooth-transition;
+    }
 
-		@include onlyOnMobile {
-			&--active path {
-				stroke: $color-primary;
-			}
-		}
+    @include onlyOnMobile {
+      &--active path {
+        stroke: $color-primary;
+      }
+    }
 
-		@include onlyOnTablet {
-			&--active path {
-				stroke: $color-primary;
-			}
-		}
+    @include onlyOnTablet {
+      &--active path {
+        stroke: $color-primary;
+      }
+    }
 
-		@include onDesktop {
-			&:hover path {
-				stroke: $color-primary;
-			}
-		}
-	}
+    @include onDesktop {
+      &:hover path {
+        stroke: $color-primary;
+      }
+    }
+  }
 
-	&__language &__language-switcher {
-		transform: scale(0) translateY(-20%);
-		transform-origin: top right;
-		position: absolute;
-		transition: transform $smooth-transition;
-		top: 100%;
-		right: 20%;
-		background: transparent;
-	}
+  &__language &__language-switcher {
+    transform: scale(0) translateY(-20%);
+    transform-origin: top right;
+    position: absolute;
+    transition: transform $smooth-transition;
+    top: 100%;
+    right: 20%;
+    background: transparent;
+  }
 
-	@include onlyOnMobile {
-		&__language--active &__language-switcher {
-			transform: scale(1);
-		}
-	}
+  @include onlyOnMobile {
+    &__language--active &__language-switcher {
+      transform: scale(1);
+    }
+  }
 
-	@include onlyOnTablet {
-		&__language--active &__language-switcher {
-			transform: scale(1);
-		}
-	}
+  @include onlyOnTablet {
+    &__language--active &__language-switcher {
+      transform: scale(1);
+    }
+  }
 
-	@include onDesktop {
-		&__language:hover &__language-switcher {
-			transform: scale(1);
-		}
-	}
-	
-	&__list {
-		font-size: $base-font-size;
-		display: none;
+  @include onDesktop {
+    &__language:hover &__language-switcher {
+      transform: scale(1);
+    }
+  }
 
-		@include onTablet {
-			display: flex;
-			gap: 20px;
-			padding-right: 18px;
-		}
+  &__list {
+    font-size: $base-font-size;
+    display: none;
 
-		@include onDesktop {
-			font-size: $medium-font-size;
-			gap: 40px;
-		}
-	}
+    @include onTablet {
+      display: flex;
+      gap: 20px;
+      padding-right: 18px;
+    }
 
-	&__list-item {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+    @include onDesktop {
+      font-size: $medium-font-size;
+      gap: 40px;
+    }
+  }
 
-	&__burger-menu {
-		padding-right: 20px;
-		display: block;
-		cursor: pointer;
+  &__list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-		& path {
-			transition: stroke $smooth-transition;
-		}
+  &__burger-menu {
+    padding-right: 20px;
+    display: block;
+    cursor: pointer;
 
-		&:hover path {
-			stroke: $color-primary;
-		}
+    & path {
+      transition: stroke $smooth-transition;
+    }
 
-		@include onTablet {
-			display: none;
-		}
-	}
+    &:hover path {
+      stroke: $color-primary;
+    }
 
-	&__burger-menu-icon {
-		width: 50px;
-		height: 50px;
-	}
+    @include onTablet {
+      display: none;
+    }
+  }
 
-	&__list-link {
-		color: $color-white;
-		text-decoration: none;
-		width: fit-content;
-		position: relative;
+  &__burger-menu-icon {
+    width: 50px;
+    height: 50px;
+  }
 
-		&::after {
-			content: "";
-			display: block;
-			width: 0;
-			height: 2px;
-			background-color: $color-primary;
-			position: absolute;
-			bottom: -10px;
-			transition: width $smooth-transition;
-		}
+  &__list-link {
+    color: $color-white;
+    text-decoration: none;
+    width: fit-content;
+    position: relative;
 
-		@include hover(color, $color-primary);
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: -10px;
+      transition: width $smooth-transition;
+    }
 
-		&:hover::after {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 2px;
-			background-color: $color-primary;
-			position: absolute;
-			bottom: -10px;
-		}
-	}
+    @include hover(color, $color-primary);
 
-	&__logo {
-		text-decoration: none;
-		cursor: pointer;
-		height: 80px;
+    &:hover::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: -10px;
+    }
+  }
 
-		@include onTablet {
-			height: 100px;
-		}
+  &__logo {
+    text-decoration: none;
+    cursor: pointer;
+    height: 80px;
 
-		@include onDesktop {
-			height: 120px;
-		}
-	}
+    @include onTablet {
+      height: 100px;
+    }
 
-	&__logo-image {
-		user-select: none;
-		height: 100%;
-	}
+    @include onDesktop {
+      height: 120px;
+    }
+  }
+
+  &__logo-image {
+    user-select: none;
+    height: 100%;
+  }
 }

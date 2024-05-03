@@ -1,13 +1,13 @@
-import { changeNumberContent } from "./changeNumberContent";
-import { checkIsElementVisible } from "./chekcIsElementVisible";
+import { changeNumberContent } from './changeNumberContent'
+import { checkIsElementVisible } from './chekcIsElementVisible'
 
 export const observeNumberElements = (numberElements, observer) => {
-	numberElements.forEach(numberElement => {
-		if (checkIsElementVisible(numberElement)) {
-			const targetNum = parseInt(numberElement.dataset.number, 10);
-			changeNumberContent(numberElement, targetNum, 0);
-		} else {
-			observer.observe(numberElement);
-		}
-	});
+  for (const numberElement of numberElements) {
+    if (checkIsElementVisible(numberElement)) {
+      const targetNumber = Number.parseInt(numberElement.dataset.number, 10)
+      changeNumberContent(numberElement, targetNumber, 0)
+    } else {
+      observer.observe(numberElement)
+    }
+  }
 }

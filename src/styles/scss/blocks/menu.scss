@@ -1,129 +1,130 @@
 .menu {
-	position: fixed;
-	background-color: $color-black;
-	transform: translateX(100%);
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	opacity: 0;
-	transition: transform $smooth-transition, opacity $smooth-transition;
+  position: fixed;
+  background-color: $color-black;
+  transform: translateX(100%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition:
+    transform $smooth-transition,
+    opacity $smooth-transition;
 
-	&__closer {
-		position: absolute;
-		height: 50px;
-		width: 50px;
-		top: 20px;
-		right: 20px;
-		cursor: pointer;
+  &__closer {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 
-		& path {
-			transition: stroke $smooth-transition;
-		}
+    & path {
+      transition: stroke $smooth-transition;
+    }
 
-		&:hover path {
-			stroke: $color-primary;
-		}
+    &:hover path {
+      stroke: $color-primary;
+    }
+  }
 
-	}
+  &--active {
+    transform: translateX(0);
+    opacity: 1;
+    display: block;
+  }
 
-	&--active {
-		transform: translateX(0);
-		opacity: 1;
-		display: block;
-	}
+  &__language {
+    position: relative;
+    cursor: pointer;
 
-	&__language {
-		position: relative;
-		cursor: pointer;
+    & path {
+      transition: stroke $smooth-transition;
+    }
 
-		& path {
-			transition: stroke $smooth-transition;
-		}
+    @include onlyOnTablet {
+      &:hover path {
+        stroke: $color-primary;
+      }
+    }
 
-		@include onlyOnTablet {
-			&:hover path {
-				stroke: $color-primary;
-			}
-		}
+    @include onlyOnMobile {
+      &--active path {
+        stroke: $color-primary;
+      }
+    }
 
-		@include onlyOnMobile{
-			&--active path {
-				stroke: $color-primary;
-			}
-		}
+    @include onDesktop {
+      &:hover path {
+        stroke: $color-primary;
+      }
+    }
+  }
 
-		@include onDesktop {
-			&:hover path {
-				stroke: $color-primary;
-			}
-		}
-	}
+  &__language &__language-switcher {
+    transform: scale(0) translateY(-20%);
+    transform-origin: top left;
+    position: absolute;
+    transition: transform $smooth-transition;
+    top: 100%;
+    left: 20%;
+    background-color: transparent;
+  }
 
-	&__language &__language-switcher {
-		transform: scale(0) translateY(-20%);
-		transform-origin: top left;
-		position: absolute;
-		transition: transform $smooth-transition;
-		top: 100%;
-		left: 20%;
-		background-color: transparent;
-	}
+  @include onlyOnMobile {
+    &__language--active &__language-switcher {
+      transform: scale(1);
+    }
+  }
 
-	@include onlyOnMobile {
-		&__language--active &__language-switcher {
-			transform: scale(1);
-		}
-	}
+  @include onlyOnTablet {
+    &__language--active &__language-switcher {
+      transform: scale(1);
+    }
+  }
 
-	@include onlyOnTablet {
-		&__language--active &__language-switcher {
-			transform: scale(1);
-		}
-	}
+  @include onDesktop {
+    &__language:hover &__language-switcher {
+      transform: scale(1);
+    }
+  }
 
-	@include onDesktop {
-		&__language:hover &__language-switcher {
-			transform: scale(1);
-		}
-	}
+  &__list {
+    display: flex;
+    padding: 80px 0 0 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    gap: 40px;
+  }
 
-	&__list {
-		display: flex;
-		padding: 80px 0 0 20px;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
-		height: 100%;
-		gap: 40px;
-	}
+  &__list-link {
+    font-size: $medium-font-size;
+    color: $color-white;
+    text-decoration: none;
+    width: fit-content;
+    position: relative;
+    transition: color $smooth-transition;
 
-	&__list-link {
-		font-size: $medium-font-size;
-		color: $color-white;
-		text-decoration: none;
-		width: fit-content;
-		position: relative;
-		transition: color $smooth-transition;
+    &:hover {
+      color: $color-primary;
+    }
 
-		&:hover {
-			color: $color-primary;
-		}
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: -10px;
+      transition: width $smooth-transition;
+    }
 
-		&::after {
-			content: "";
-			display: block;
-			width: 0;
-			height: 2px;
-			background-color: $color-primary;
-			position: absolute;
-			bottom: -10px;
-			transition: width $smooth-transition;
-		}
-
-		&:hover::after {
-			width: 100%;
-		}
-	}
+    &:hover::after {
+      width: 100%;
+    }
+  }
 }

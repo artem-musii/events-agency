@@ -6,15 +6,15 @@
 }
 
 @mixin onlyOnMobile {
-	@media (max-width: 767px) {
-		@content;
-	}
+  @media (max-width: 767px) {
+    @content;
+  }
 }
 
 @mixin onlyOnTablet {
-	@media (min-width: 768px) and (max-width: 1023px) {
-		@content;
-	}
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
 }
 
 @mixin onDesktop {

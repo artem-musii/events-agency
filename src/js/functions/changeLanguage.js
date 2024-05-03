@@ -1,14 +1,14 @@
 export function changeLanguage(currentLanguageText) {
-	Object.keys(currentLanguageText).forEach(selector => {
-		const elements = document.querySelectorAll(selector);
-		const text = currentLanguageText[selector];
+  for (const selector of Object.keys(currentLanguageText)) {
+    const elements = document.querySelectorAll(selector)
+    const text = currentLanguageText[selector]
 
-		if (elements.length > 1) {
-			elements.forEach((element, index) => {
-				element.textContent = text[index];
-			});
-		} else {
-			elements[0].textContent = text;
-		}
-	});
+    if (elements.length > 1) {
+      for (const [index, element] of elements.entries()) {
+        element.textContent = text[index]
+      }
+    } else {
+      elements[0].textContent = text
+    }
+  }
 }
