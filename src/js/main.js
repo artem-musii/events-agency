@@ -13,7 +13,7 @@ import { changeLanguage } from './functions/changeLanguage.js'
 
 document.body.overflow = 'hidden'
 
-window.addEventListener('load', handleLoaded())
+window.addEventListener('load', handleLoaded)
 
 AOS.init({
   offset: 40,
