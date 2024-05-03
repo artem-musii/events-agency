@@ -1,5 +1,28 @@
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { languageConfig } from './lang/language.config.js';
+AOS.init({
+  offset: 180,
+  delay: 0,
+  duration: 300,
+  easing: 'ease',
+  once: false,
+  mirror: true,
+  anchorPlacement: 'top-bottom',
+
+});
+
+const navigation = document.querySelector('.navigation');
+
+window.addEventListener('scroll', () => {
+	if (window.scrollY > 0) {
+		navigation.classList.add('navigation--scrolled');
+	}
+	else {
+		navigation.classList.remove('navigation--scrolled');
+	}
+});
 
 const burgerMenu = document.querySelector('.navigation__burger-menu');
 const menu = document.querySelector('.menu');
