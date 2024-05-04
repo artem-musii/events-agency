@@ -1,5 +1,5 @@
-import globals from 'globals'
-import eslintPluginUnicorn from 'eslint-plugin-unicorn'
+import globals from 'globals';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 
 export default [
   {
@@ -20,4 +20,4 @@ export default [
       'unicorn/prefer-add-event-listener': ['off'],
     },
   },
-]
+];

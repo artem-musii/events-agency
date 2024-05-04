@@ -99,4 +99,4 @@ export const languageConfig = {
       'opinii było niezwykle pozytywnych',
     ],
   },
-}
+};
