@@ -2,8 +2,6 @@ import { toggleScroll } from './toggleScroll'
 
 const config = {
   scrollEnabled: true,
-  scrollTop: 0,
-  scrollLeft: 0,
 }
 
 export const addNavigationInteractionsListeners = (
@@ -15,17 +13,17 @@ export const addNavigationInteractionsListeners = (
   for (const link of links) {
     link.addEventListener('click', () => {
       menu.classList.toggle('menu--active')
-      toggleScroll.call(config)
+      toggleScroll.call(undefined, config)
     })
   }
 
   burgerMenu.addEventListener('click', () => {
     menu.classList.toggle('menu--active')
-    toggleScroll.call(config)
+    toggleScroll.call(undefined, config)
   })
 
   menuCloser.addEventListener('click', () => {
     menu.classList.toggle('menu--active')
-    toggleScroll.call(config)
+    toggleScroll.call(undefined, config)
   })
 }
